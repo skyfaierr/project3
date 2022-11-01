@@ -1,0 +1,36 @@
+// Подключение библиотек
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+// Введение новой функции factorial 
+int factorial(int i)
+{
+  if (i==0) return 1;
+  else return i*factorial(i-1);
+}
+// Введение новой функции function 
+float function (float a, float b, float c)
+{   
+    if (b==-1) return c;    
+    c+=(pow(a,b)/factorial(b));
+    b-=1;
+    function(a,b,c);	       
+}
+
+int main()
+{
+    // Объявление переменной x, n, num
+    float x, n, num;
+    // Приглашение ввести числа
+    cout <<"Введите числа x, n:  \n";
+    cin>>x>>n;
+    // Преобразование переменной num через функцию
+    num=function(x, n, 0);
+    // вывод на экран результата подпрограммы
+    cout<<"Полученный результат:  "<<num;
+    // возврат кода ошибки 0, означающего,
+    // что программа выполнилась успешно
+    return 0;
+}
