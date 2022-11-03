@@ -16,7 +16,7 @@ float function (float a, float b, float c)
     if (b==-1) return c;    
     c+=(pow(a,b)/factorial(b));
     b-=1;
-    function(a,b,c);	       
+    return function(a,b,c);	       
 }
 
 int main()
